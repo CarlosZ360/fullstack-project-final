@@ -16,7 +16,7 @@ function App() {
 
   // Conexión al backend
   useEffect(() => {
-    fetch("http://localhost:3000/tasks")
+    fetch("import.meta.env.VITE_API_URL")
       .then((response) => response.json())
       .then((data) => {
         setTasks(data);
@@ -33,7 +33,7 @@ function App() {
       completed: false
     };
 
-    fetch("http://localhost:3000/tasks", {
+    fetch("import.meta.env.VITE_API_URL", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -51,7 +51,7 @@ function App() {
 
   const deleteTask = async (id: number) => {
     try {
-      const response = await fetch(`http://localhost:3000/tasks/${id}`, {
+      const response = await fetch("${import.meta.env.VITE_API_URL}/${id}", {
         method: "DELETE",
       });
 
@@ -70,7 +70,7 @@ function App() {
     if (!task) return;
 
     try {
-      const response = await fetch(`http://localhost:3000/tasks/${id}`, {
+      const response = await fetch("${import.meta.env.VITE_API_URL}/${id}", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
