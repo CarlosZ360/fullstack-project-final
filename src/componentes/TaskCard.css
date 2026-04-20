@@ -1,0 +1,42 @@
+/* src/componentes/TaskCard.css */
+.task-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-1px);
+  background: #f3f4f6;
+}
+
+.task-text {
+  cursor: pointer;
+  flex: 1;
+}
+
+.task-text.completed {
+  text-decoration: line-through;
+  color: #9ca3af;
+}
+
+.task-card button {
+  border: none;
+  background: #ef4444;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.task-card button:hover {
+  background: #dc2626;
+}
