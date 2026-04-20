@@ -3,6 +3,7 @@ import Header from "./componentes/Header";
 import TaskInput from "./componentes/TaskInput";
 import Tasklist from "./componentes/Tasklist";
 import Footer from "./componentes/Footer";
+const API_URL = import.meta.env.VITE_API_URL;
 
 interface Task {
   id: number;
@@ -51,7 +52,7 @@ function App() {
 
   const deleteTask = async (id: number) => {
     try {
-      const response = await fetch("${import.meta.env.VITE_API_URL}/${id}", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/${id}`, {
         method: "DELETE",
       });
 
@@ -70,7 +71,7 @@ function App() {
     if (!task) return;
 
     try {
-      const response = await fetch("${import.meta.env.VITE_API_URL}/${id}", {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
