@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Header from "./componentes/Header";
 import TaskInput from "./componentes/TaskInput";
+import Tasklist from "./componentes/Tasklist";
 import Footer from "./componentes/Footer";
 const API_URL = import.meta.env.VITE_API_URL;
 
