@@ -1,5 +1,4 @@
-import { useState } from "react";
-import "./TaskInput.css";
+import React, { useState } from "react";
 
 type TaskInputProps = {
   onAddTask: (text: string) => void;
@@ -9,10 +8,12 @@ function TaskInput({ onAddTask }: TaskInputProps) {
   const [inputValue, setInputValue] = useState("");
 
   const handleAddTask = () => {
+    // Si contiene texto válido, lo limpia y añade
     if (inputValue.trim() !== "") {
-      onAddTask(inputValue);
-      setInputValue("");
+      onAddTask(inputValue.trim()); // Se envía el texto limpio sin espacios sobrantes
     }
+    // Solución al BUG: Siempre reseteamos el input, previniendo espacios residuales
+    setInputValue("");
   };
 
   return (

@@ -3,7 +3,7 @@
 Todo list usando react para frontend y node express para backend
 Usando TypeScript y prisma
 
-<!-- BADGE_CI -->
+[![CI](https://github.com/CarlosZ360/fullstack-project-final/actions/workflows/ci.yml/badge.svg)](https://github.com/CarlosZ360/fullstack-project-final/actions/workflows/ci.yml)
  
 ## 🚀 Instalación local
  
