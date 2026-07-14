@@ -40,6 +40,8 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-      - run: npm ci
-      - run: npx playwright install
+      - run: npm ci      
+      - run: npx playwright install --with-deps
       - run: npx playwright test
+        env:
+          VITE_API_URL: http://localhost:5173/api
