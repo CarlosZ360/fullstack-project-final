@@ -5,6 +5,11 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  workflow_dispatch:
+    inputs:
+      confirmacion:
+        description: 'Escribe DEPLOY para confirmar el despliegue a produccion'
+        required: true
  
 jobs:
   build:
@@ -94,17 +99,6 @@ jobs:
         run: railway up --service fullstack-project-final --environment production
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
-
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-  workflow_dispatch:
-    inputs:
-      confirmacion:
-        description: 'Escribe DEPLOY para confirmar el despliegue a produccion'
-        required: true
 
   deploy-produccion:
     name: Deploy a Producción (manual)
