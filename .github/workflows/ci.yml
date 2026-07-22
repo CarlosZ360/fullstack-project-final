@@ -83,7 +83,7 @@ jobs:
 
   deploy-staging:
     name: Deploy a Staging
-    needs: [build, pruebas, e2e]
+    needs: [build, pruebas, e2e] #arreglar la tarea de migraciones
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
@@ -91,6 +91,6 @@ jobs:
       - name: Instalar Railway CLI
         run: npm install -g @railway/cli
       - name: Desplegar a Railway (staging)
-        run: railway up --service backend --environment staging
+        run: railway up --service backend --environment production
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
