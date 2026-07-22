@@ -14,6 +14,10 @@ import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
+app.get('/health', (req: any, res: any) => {
+  res.status(200).json({ status: 'ok' })
+})
+
 app.get("/", (req: any, res: any) => {
     res.send("Backend is working!");
 });
