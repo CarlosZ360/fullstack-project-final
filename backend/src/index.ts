@@ -3,7 +3,7 @@ const cors = require("cors");
 const app = express();
 const PORT = 3000;
 const jwt = require("jsonwebtoken");
-const SECRET_KEY = "mi_clave_secreta";
+const SECRET_KEYY = "mi_clave_secreta";
 
 
 app.use(cors());
