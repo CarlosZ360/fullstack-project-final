@@ -87,7 +87,7 @@ jobs:
 
   deploy-staging:
     name: Deploy a Staging
-    needs: [build, pruebas, e2e] #arreglar la tarea de migraciones
+    needs: [build, pruebas, e2e, migraciones]
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
